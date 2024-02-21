@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+}
+@model Service_Repository_Example.Models.Book
+
+<h2>Hapus Buku</h2>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <h4>Apakah Anda yakin ingin menghapus buku ini?</h4>
+        <div>
+            <p>
+                <strong>Judul:</strong> @Model.Title<br />
+                <strong>Penulis:</strong> @Model.Author<br />
+            </p>
+            <input type="submit" value="Hapus" class="btn btn-danger" /> |
+            <a asp-action="Index">Batal</a>
+        </div>
+    </div>
+</form>

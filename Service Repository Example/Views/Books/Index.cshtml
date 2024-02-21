@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Service_Repository_Example.Models.Book>
+
+<h2>Daftar Buku</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Judul</th>
+            <th>Penulis</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>
+                    <a href="/Books/Edit/@book.Id">Edit</a> |
+                    <a href="/Books/Details/@book.Id">Details</a> |
+                    <a href="/Books/Delete/@book.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Books/Create">Tambah Buku Baru</a>
